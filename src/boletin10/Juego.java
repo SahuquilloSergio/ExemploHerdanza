@@ -11,7 +11,7 @@ public class Juego {
     public void comenzarpartida(){
         // Se crea un objeto de tipo Scanner y se crean las variables opcion, dificultad, respuesta y resultado.
         Scanner scan = new Scanner(System.in);
-        int opcion, dificultad, resultado, respuesta;
+        int opcion, dificultad, resultado, respuesta, intentos;
         // Se crea un bucle repetitivo do... while.
         do{
             System.out.println("_________MENU_________\n1. Modo 1 jugador\n2. Modo 2 jugadores");
@@ -21,21 +21,23 @@ public class Juego {
         if (opcion==1){
             System.out.println("¡Modo 1 jugador!\nSelecciona la dificultad:\n1. Dificultad 1 - Fácil\n2. Dificuktad 2 - Medio\n3- Dificultad 3 - Difícil");
             dificultad = scan.nextInt();
+            // Se definen en las dificultades el número de intentos de los que dispondrá el jugador.
             if (dificultad==1){
-                Random aleatorio = new Random (System.currentTimeMillis());
-                //Valor aleatorio de 1 al 50.
-                int numeroaleatorio = aleatorio.nextInt(50)+1;
-                for (int i=10; i>0; i--){
-                    
-                }
+                intentos = 10;    
             }
             else if (dificultad==2){
-            
+                intentos = 7;
             }
             else{
-                    
+                intentos = 5;
                     }
+            Random aleatorio = new Random (System.currentTimeMillis());
+            //Valor aleatorio de 1 al 50.
+            int numeroaleatorio = aleatorio.nextInt(50)+1;
+            for (int i=10; i>0; i--){
+            
             }
+        }
         else{
             System.out.println("¡Modo 2 jugadores!\nSelecciona la dificultad:\n1. Dificultad 1 - Fácil\n2. Dificuktad 2 - Medio\n3- Dificultad 3 - Difícil");
             dificultad = scan.nextInt();
